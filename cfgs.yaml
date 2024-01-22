@@ -1,0 +1,43 @@
+
+backbone: resnet50 # vgg resnet50 resnet101 resnext50
+#dataset: BSDS-VOC # BSDS BSDS-VOC NYUD-image NYUD-hha MultiCue-Edge MultiCue-Contour
+loss: AF  # CE Dice AF DF
+a: 1
+b: 1
+c: 0.1
+
+#vgg16-5stage: D:\DataSet\pretrain_model\pytorch\vgg16-397923af.pth
+#ResNet50stage: C:\Users\dell\Desktop\resnet50-19c8e357.pth
+#
+#dataset:
+#  BSDS: D:\DataSet\HED-BSDS
+#  BSDS-VOC: D:\DataSet
+#  PASCAL-Context: D:\DataSet\PASCAL_Context
+#  PASCAL-VOC12: D:\DataSet\VOCdevkit
+#  NYUD-V2: D:\DataSet\NYUD
+#  PASCAL-Context: D:\DataSet\PASCAL
+
+vgg16-5stage: E:\LC\qyk\Pre_Net\vgg16-397923af.pth
+
+dataset:
+  BSDS-VOC: E:\LC\qyk\imageFile
+  BSDS: E:\LC\qyk\imageFile\HED-BSDS
+  PASCAL-Context: E:\stoneLi\imageFile\BSDS
+  NYUD-V2: E:/LC/ZhangXiao/NYUD
+
+
+# train 16 32 8 for nyud and PASCAL-Context 10 8 2 for bsds PASCAL12: 10 64 16
+batch_size: 1
+max_iter: 20
+decay_rate: 0.1
+decay_steps: 10
+
+# optimization Adam or SGD
+method: SGD
+lr: 1.0e-6
+momentum: 0.9
+weight_decay: 2.0e-4
+
+# save
+sava_epoch: 2
+save_name: model.pth
